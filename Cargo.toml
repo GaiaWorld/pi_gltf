@@ -1,0 +1,12 @@
+[package]
+name = "pi_gltfloader"
+version = "0.0.1"
+authors = [""]
+edition = "2021"
+description = "gltf loader"
+repository = "https://github.com/GaiaWorld/pi_gltfloader"
+license = "MIT OR Apache-2.0"
+keywords = ["gltf loader"]
+
+[dependencies]
+approx = "0.5"
