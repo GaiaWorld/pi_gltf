@@ -183,6 +183,7 @@ where
                     .map(|x| ReadOutputs::MorphTargetWeights(MorphTargetWeights::F32(x))),
                 _ => unreachable!(),
             },
+            Property::Pointer => todo!(),
         }
     }
 }
