@@ -170,7 +170,7 @@ impl Validate for Primitive {
                     report(min_path, Error::Invalid);
                 }
             } else {
-                report(min_path, Error::Missing);
+                // report(min_path, Error::Missing);
             }
 
             let max_path = &|| position_path().field("max");
@@ -179,7 +179,7 @@ impl Validate for Primitive {
                     report(max_path, Error::Invalid);
                 }
             } else {
-                report(max_path, Error::Missing);
+                // report(max_path, Error::Missing);
             }
         } else {
             report(position_path, Error::Missing);

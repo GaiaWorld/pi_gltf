@@ -37,6 +37,9 @@ pub enum Interpolation {
     /// in-tangent, a spline vertex, and an out-tangent. There must be at least two
     /// keyframes when using this interpolation
     CubicSpline,
+    
+    /// PI_EXTENDS
+    PICUBICSPLINE,
 }
 
 /// Specifies a property to animate.
@@ -50,6 +53,8 @@ pub enum Property {
     Scale,
     /// Weights of morph targets.
     MorphTargetWeights,
+    /// PI_EXTENDS
+    Pointer,
 }
 
 /// A keyframe animation.
@@ -212,6 +217,7 @@ impl ser::Serialize for Interpolation {
             Interpolation::Linear => "LINEAR",
             Interpolation::Step => "STEP",
             Interpolation::CubicSpline => "CUBICSPLINE",
+            Interpolation::PICUBICSPLINE => "PICUBICSPLINE",
         })
     }
 }
@@ -240,7 +246,7 @@ impl<'de> de::Deserialize<'de> for Checked<Property> {
                     "rotation" => Valid(Rotation),
                     "scale" => Valid(Scale),
                     "weights" => Valid(MorphTargetWeights),
-                    _ => Invalid,
+                    _ => Valid(Pointer),
                 })
             }
         }
@@ -258,6 +264,7 @@ impl ser::Serialize for Property {
             Property::Rotation => "rotation",
             Property::Scale => "scale",
             Property::MorphTargetWeights => "weights",
+            Property::Pointer => "pointer",
         })
     }
 }
