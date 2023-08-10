@@ -71,6 +71,9 @@ pub enum ReadOutputs<'a> {
 
     /// Morph target animations.
     MorphTargetWeights(MorphTargetWeights<'a>),
+    
+    /// 
+    Pointer(accessor::Iter<'a, f32>),
 }
 
 impl<'a> Rotations<'a> {
@@ -182,6 +185,9 @@ where
                 DataType::F32 => Iter::new(output, self.get_buffer_data.clone())
                     .map(|x| ReadOutputs::MorphTargetWeights(MorphTargetWeights::F32(x))),
                 _ => unreachable!(),
+            },
+            Property::Pointer => {
+                Iter::new(output, self.get_buffer_data.clone()).map(ReadOutputs::Pointer)
             },
         }
     }
