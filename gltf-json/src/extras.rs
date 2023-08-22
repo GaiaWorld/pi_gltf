@@ -16,7 +16,7 @@ pub type Extras = Option<::std::boxed::Box<Value>>;
 
 #[cfg(feature = "extras")]
 impl Validate for Extras {
-    fn validate<P, R>(&self, root: &Root, path: P, report: &mut R)
+    fn validate<P, R>(&self, _root: &Root, _path: P, _report: &mut R)
     where
         P: Fn() -> Path,
         R: FnMut(&dyn Fn() -> Path, Error),
