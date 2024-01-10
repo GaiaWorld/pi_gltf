@@ -1,16 +1,17 @@
 [package]
 name = "pi_gltf"
-version = "1.0.0"
-authors = ["David Harvey-Macaulay <alteous@outlook.com>"]
+version = "0.1.0"
+authors = ["baip0002 <2494156981@qq.com>"]
 description = "glTF 2.0 loader"
-documentation = "https://docs.rs/gltf"
-repository = "https://github.com/gltf-rs/gltf"
-homepage = "https://github.com/gltf-rs/gltf"
+repository = "https://github.com/GaiaWorld/pi_gltf.git"
+# documentation = "https://docs.rs/gltf"
+# repository = "https://github.com/gltf-rs/gltf"
+# homepage = "https://github.com/gltf-rs/gltf"
 readme = "README.md"
 keywords = ["glTF", "3D", "asset", "model", "scene"]
-license = "MIT OR Apache-2.0"
+# license = "MIT OR Apache-2.0"
 include = ["**/*.rs", "Cargo.toml", "LICENSE-*"]
-edition = "2018"
+edition = "2021"
 
 [badges]
 travis-ci = { repository = "gltf-rs/gltf" }
